@@ -103,7 +103,7 @@ async def _skiped_ul(event):
             "`Already Your 1st Request Is Running!!! So Try Again After Current Request Completed!!!`"
         )
     xx = await event.reply("`Request Added`")
-    REQUEST[0] = True
+    REQUEST.append(True)
     await asyncio.gather(
         *[
             geter("https://subsplease.org/rss/?r=720", index),
