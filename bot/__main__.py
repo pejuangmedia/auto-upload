@@ -98,14 +98,18 @@ async def _skiped_ul(event):
         index = int(event.text.split()[1])
     except BaseException:
         index = 1
+    if REQUEST:
+        return await event.reply("`Already Your 1st Request Is Running!!! So Try Again After Current Request Completed!!!`")
     xx = await event.reply("`Request Added`")
+    REQUEST[0] = True
     await asyncio.gather(
         *[
             geter("https://subsplease.org/rss/?r=720", index),
             geter("https://subsplease.org/rss/?r=1080p", index),
         ]
     )
-    await xx.edit("`Request Completed")
+    REQUEST.clear()
+    await xx.reply("`Request Completed`")
 
 
 async def further_work(msg_id, filename, quality):
@@ -197,7 +201,7 @@ async def upload(torrent_link, name, compress=False):
                     info=True,
                     log=True,
                 )
-                rename = _rename(name, og=True)
+                rename = await _rename(name, og=True)
                 out = f"encode/{rename}"
                 os.system(f"""cp '''{dl}''' '''{out}'''""")
                 await reporter.report(

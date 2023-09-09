@@ -176,4 +176,7 @@ reporter = Reporter(bot, Var.LOG_CHANNEL, LOGS)
 
 # Scheduler For Airtime
 sch = AsyncIOScheduler(timezone="Asia/Kolkata")
+
+# Cache Data For Operations
 POST_TRACKER = []
+REQUEST = []
