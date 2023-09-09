@@ -39,7 +39,7 @@ def is_compress(from_memory=False):
         if MEM.get("COMPRESS") is None:
             return True
         return MEM.get("COMPRESS")
-    d = eval(dB.get("COMPRESS"))
+    d = eval(dB.get("COMPRESS") or "None")
     if d is None:
         return True
     return d
