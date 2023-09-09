@@ -11,7 +11,8 @@
 #    General Public License for more details.
 #
 # License can be found in <
-# https://github.com/kaif-00z/AutoAnimeBOt/blob/main/LICENSE > .
+# https://github.com/kaif-00z/AutoAnimeBot/blob/main/LICENSE > .
+
 # Also Thanks to Danish here
 
 import asyncio

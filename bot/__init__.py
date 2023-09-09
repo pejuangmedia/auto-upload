@@ -11,7 +11,7 @@
 #    General Public License for more details.
 #
 # License can be found in <
-# https://github.com/kaif-00z/AutoAnimeBOt/blob/main/LICENSE > .
+# https://github.com/kaif-00z/AutoAnimeBot/blob/main/LICENSE > .
 
 import asyncio
 import logging
@@ -78,9 +78,9 @@ def ask_(db: Redis):
 def loader(mem: dict, db: Redis, logger):
     for key in db.keys():
         mem.update({key: eval(db.get(key) or "[]")})
-        logger.info(
-            f"Succesfully Sync Database!!!"
-        )
+    logger.info(
+        f"Succesfully Sync Database!!!"
+    )
 
 
 if not os.path.exists("thumb.jpg"):
