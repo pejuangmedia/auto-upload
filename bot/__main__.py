@@ -99,7 +99,9 @@ async def _skiped_ul(event):
     except BaseException:
         index = 1
     if REQUEST:
-        return await event.reply("`Already Your 1st Request Is Running!!! So Try Again After Current Request Completed!!!`")
+        return await event.reply(
+            "`Already Your 1st Request Is Running!!! So Try Again After Current Request Completed!!!`"
+        )
     xx = await event.reply("`Request Added`")
     REQUEST[0] = True
     await asyncio.gather(
