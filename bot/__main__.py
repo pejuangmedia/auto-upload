@@ -46,7 +46,7 @@ async def _start(event):
     msg_id = event.pattern_match.group(1)
     xnx = await event.reply("`Please Wait...`")
     if msg_id:
-        if msg_id.isdigit():
+        if msg_id.isdigit(): # this is diff thing , just ignore it
             msg = await bot.get_messages(Var.MAIN_CHANNEL, ids=int(msg_id))
             await event.reply(msg, buttons=Button.clear())
         else:
@@ -210,14 +210,19 @@ async def upload(torrent_link, name, compress=False):
                     "Successfully Renamed Now Going To Upload...", info=True, log=True
                 )
             thumb = await cover_dl((await get_cover(name)))
-            async with pyro:
-                post = await pyro.send_document(
-                    Var.MAIN_CHANNEL,
-                    out,
-                    caption=f"`{rename}`",
-                    force_document=True,
-                    thumb=thumb or "thumb.jpg",
-                )
+            if not pyro.is_connected:
+                try:
+                    await pyro.connect()
+                except ConnectionError:
+                    pass
+            # async with pyro:
+            post = await pyro.send_document(
+                Var.MAIN_CHANNEL,
+                out,
+                caption=f"`{rename}`",
+                force_document=True,
+                thumb=thumb or "thumb.jpg",
+            )
             await reporter.report(
                 "Succesfully Uploaded New Video.", info=True, log=True
             )
