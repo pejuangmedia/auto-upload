@@ -138,6 +138,7 @@ async def notify_about_me():
         )
     except BaseException:
         pass
+    await pyro.start()
 
 
 class Reporter:
