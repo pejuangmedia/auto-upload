@@ -17,18 +17,19 @@
 
 import asyncio
 import json
+import multiprocessing
 import os
 import subprocess
-import multiprocessing
+from concurrent.futures import ThreadPoolExecutor
+from functools import partial, wraps
 from pathlib import Path
 
 import aiofiles
 import aiohttp
 from html_telegraph_poster import TelegraphPoster
-from concurrent.futures import ThreadPoolExecutor
-from functools import partial, wraps
 
 OK = {}
+
 
 def run_async(function):
     @wraps(function)
@@ -39,6 +40,7 @@ def run_async(function):
         )
 
     return wrapper
+
 
 async def async_searcher(
     url: str,

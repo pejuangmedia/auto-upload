@@ -44,6 +44,7 @@ def is_compress(from_memory=False):
         return True
     return d
 
+
 def store_items(hash, list):
     data = eval(dB.get("STORE") or "{}")
     data.update({hash: list})

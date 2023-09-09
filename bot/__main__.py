@@ -32,9 +32,9 @@ from .database import (
     is_compress,
     store_items,
 )
-from .func import code, cover_dl, gen_ss_sam, mediainfo, stats, run_async
-from .rename import _rename, get_caption, get_cover, get_poster
 from .dts import shu_msg
+from .func import code, cover_dl, gen_ss_sam, mediainfo, run_async, stats
+from .rename import _rename, get_caption, get_cover, get_poster
 
 
 @bot.on(
@@ -114,7 +114,11 @@ async def further_work(msg_id, filename, quality):
         btn = [
             [],
         ]
-        bac_msg = await bot.send_message(Var.BACKUP_CHANNEL, msg) if Var.BACKUP_CHANNEL else None
+        bac_msg = (
+            await bot.send_message(Var.BACKUP_CHANNEL, msg)
+            if Var.BACKUP_CHANNEL
+            else None
+        )
         link_info = await mediainfo(filename, bot)
         if link_info:
             btn.append(

@@ -26,7 +26,6 @@ from telethon.errors.rpcerrorlist import FloodWaitError
 
 from .config import Var
 
-
 basicConfig(
     format="%(asctime)s || %(name)s [%(levelname)s] : %(message)s",
     handlers=[
@@ -78,9 +77,7 @@ def ask_(db: Redis):
 def loader(mem: dict, db: Redis, logger):
     for key in db.keys():
         mem.update({key: eval(db.get(key) or "[]")})
-    logger.info(
-        f"Succesfully Sync Database!!!"
-    )
+    logger.info(f"Succesfully Sync Database!!!")
 
 
 if not os.path.exists("thumb.jpg"):
