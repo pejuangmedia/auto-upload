@@ -46,13 +46,14 @@
 - `RESTART_EVERDAY` - `True/False` It Will Restart The Bot Everyday At 00:30 **IST**, default is `True`.
 
 ## Deployment In VPS
-> `git clone https://github.com/kaif-00z/AutoAnimeBot.git `
 
-> `nano .env  ` configure env as per [this](https://github.com/kaif-00z/AutoAnimeBot/blob/main/.sample.env) or  using [this](https://github.com/kaif-00z/AutoAnimeBot/blob/main/auto_env_gen.py).
+`git clone https://github.com/kaif-00z/AutoAnimeBot.git`
 
-> `bash pkg.sh`
+`nano .env` configure env as per [this](https://github.com/kaif-00z/AutoAnimeBot/blob/main/.sample.env) or  using [this](https://github.com/kaif-00z/AutoAnimeBot/blob/main/auto_env_gen.py).
 
-> `bash run.sh`
+`bash pkg.sh`
+
+`bash run.sh`
 
 ## Commands
 
