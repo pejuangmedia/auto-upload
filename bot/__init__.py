@@ -15,7 +15,7 @@
 
 import asyncio
 import logging
-import os
+import os, sys
 from logging import INFO, FileHandler, StreamHandler, basicConfig, getLogger
 
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
@@ -115,7 +115,7 @@ try:
         charset="utf-8",
         decode_responses=True,
     )
-    LOGS.info("successfully connected to Redis database")
+    LOGS.info("Successfully Connected to Redis database")
     ask_(dB)
     loader(MEM, dB, LOGS)
 except Exception as eo:

@@ -15,11 +15,10 @@
 
 
 import json
-import sys
 
 import aiohttp
 
-from . import POST_TRACKER, Var, bot, os, reporter
+from . import POST_TRACKER, Var, bot, os, reporter, sys
 from .rename import get_english
 
 
