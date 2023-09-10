@@ -46,7 +46,7 @@ async def _start(event):
     msg_id = event.pattern_match.group(1)
     xnx = await event.reply("`Please Wait...`")
     if msg_id:
-        if msg_id.isdigit(): # this is diff thing , just ignore it
+        if msg_id.isdigit():  # this is diff thing , just ignore it
             msg = await bot.get_messages(Var.MAIN_CHANNEL, ids=int(msg_id))
             await event.reply(msg, buttons=Button.clear())
         else:
@@ -87,12 +87,16 @@ async def _logs(event):
         return
     await event.reply(file="AutoAnimeBot.log", thumb="thumb.jpg")
 
-@bot.on(events.NewMessage(incoming=True, pattern="/restart$", func=lambda e: e.is_private))
+
+@bot.on(
+    events.NewMessage(incoming=True, pattern="/restart$", func=lambda e: e.is_private)
+)
 async def _restart(event):
     if event.sender_id != Var.OWNER:
         return
     await event.reply("`Restarting...`")
     os.execl(sys.executable, sys.executable, "-m", "bot", "--samedb")
+
 
 @bot.on(
     events.NewMessage(incoming=True, pattern="/skipul", func=lambda e: e.is_private)
