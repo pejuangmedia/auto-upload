@@ -27,8 +27,6 @@
 
 - `MAIN_CHANNEL` - ID of Channel Where Anime Will Upload.
 
-- `BACKUP_CHANNEL` - ID of Channel Where Anime Will Be Saved As BackUP.
-
 - `CLOUD_CHANNEL` - ID of Channel Where Samples And Screenshots Of Anime Will Be Uploaded.
 
 - `LOG_CHANNEL` - ID of Channel Where Status Of Proccesses Will Be Shown.
@@ -37,6 +35,8 @@
 
 ### OPTIONAL VARIABLES
 
+- `BACKUP_CHANNEL` - ID of Channel Where Anime Will Be Saved As BackUP.
+
 - `THUMBNAIL` - JPG/PNG Link of Thumbnail FIle.
 
 - `FFMPEG` - You Can Set Custom Path Of ffmpeg if u want, default is `ffmpeg`.
@@ -44,6 +44,15 @@
 - `SEND_SCHEDULE` - `True/False` Send Schedule of Upcoming Anime of that day at 00:30 **IST**, default is `False`.
 
 - `RESTART_EVERDAY` - `True/False` It Will Restart The Bot Everyday At 00:30 **IST**, default is `True`.
+
+## Deployment In VPS
+> `git clone https://github.com/kaif-00z/AutoAnimeBot.git `
+
+> `nano .env  ` configure env as per [this](https://github.com/kaif-00z/AutoAnimeBot/blob/main/.sample.env) or  using [this](https://github.com/kaif-00z/AutoAnimeBot/blob/main/auto_env_gen.py).
+
+> `bash pkg.sh`
+
+> `bash run.sh`
 
 ## Commands
 
