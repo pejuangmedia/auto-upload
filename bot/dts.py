@@ -41,4 +41,4 @@ async def shu_msg():
             await reporter.report(str(err), error=True, log=True)
     POST_TRACKER.clear()
     if Var.RESTART_EVERDAY:
-        os.execl(sys.executable, sys.executable, "-m", "bot", "--samedb")
+        os.execl(sys.executable, sys.executable, "-m", "bot", "--samedb", "--no-notify")

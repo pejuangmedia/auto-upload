@@ -126,6 +126,8 @@ except Exception as eo:
 
 async def notify_about_me():
     try:
+        if "--no-notify" in sys.argv:
+            return await pyro.start()
         btn = [
             [
                 Button.url("Developer 👨‍💻", url="t.me/kaif_00z"),
@@ -135,7 +137,7 @@ async def notify_about_me():
             ]
         ]
         await bot.send_message(
-            Var.MAIN_CHANNEL, "`Hi, Anime Lovers, How Are You!`", buttons=btn
+            Var.MAIN_CHANNEL, "`Hi, Anime Lovers, How Are You?`", buttons=btn
         )
     except BaseException:
         pass
