@@ -15,7 +15,8 @@
 
 import asyncio
 import logging
-import os, sys
+import os
+import sys
 from logging import INFO, FileHandler, StreamHandler, basicConfig, getLogger
 
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
