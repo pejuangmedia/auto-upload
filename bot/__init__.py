@@ -18,6 +18,7 @@ import logging
 import os
 import sys
 from logging import INFO, FileHandler, StreamHandler, basicConfig, getLogger
+from traceback impoert format_exc
 
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from pyrogram import Client
@@ -120,6 +121,7 @@ try:
     ask_(dB)
     loader(MEM, dB, LOGS)
 except Exception as eo:
+    LOGS.exception(format_exc())
     LOGS.critical(str(eo))
     exit()
 
