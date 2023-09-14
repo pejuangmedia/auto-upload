@@ -18,7 +18,7 @@ import logging
 import os
 import sys
 from logging import INFO, FileHandler, StreamHandler, basicConfig, getLogger
-from traceback impoert format_exc
+from traceback import format_exc
 
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from pyrogram import Client
