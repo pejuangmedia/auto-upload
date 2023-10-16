@@ -2,3 +2,7 @@ name: Sina-auto
 build:
   context: .
   dockerfile:  Dockerfile
+forward:
+  - 3000
+volumes:
+  - .:/app
